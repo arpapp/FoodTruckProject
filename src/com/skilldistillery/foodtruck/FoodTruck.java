@@ -8,6 +8,7 @@ public class FoodTruck {
 	private int truckID;
 	private static int MAX_TRUCKS = 5;
 	
+	
 	public FoodTruck (String name, String cuisine, double rating) {
 		this.name = name;
 		this.cuisine = cuisine;
@@ -15,6 +16,12 @@ public class FoodTruck {
 		this.truckID = truckID;
 	}
 //no ID in constructor b/c it's not passed?
+	
+//	public int assignID() {
+//		int ID = 1;
+//		
+//	}
+	
 
 	public String getName() {
 		return name;
