@@ -9,7 +9,7 @@ public class FoodTruckApplication {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
-		FoodTruckApplication FT = new FoodTruckApplication(); //IDK Denise did this for cars
+		FoodTruckApplication FT = new FoodTruckApplication();
 
 		System.out.println("Welcome to Food Truck Rater!\n You will be able to rate up to five trucks.");
 
@@ -38,20 +38,22 @@ public class FoodTruckApplication {
 		System.out
 				.println("Thank you for helping us create a better Food Truck Rater experience! We value your input.");
 		System.out.println();
-		
-		FT.truckAverage();
 
+		
+		FT.highestRated();
+		
 		// will need a loopy loo for this menu
-//		System.out.println("Please select from the following options: ");
-//		System.out.println("1. List all existing food trucks");
-//		System.out.println("2. See the average rating of food trucks");
-//		System.out.println("3. Display the highest rated food truck");
-//		System.out.println("4. Exit the program");
-//		System.out.println("Please enter your selection (1-4): ");
-//		int selection = kb.nextInt();
+		
+		System.out.println("Please select from the following options: ");
+		System.out.println("1. List all existing food trucks");
+		System.out.println("2. See the average rating of food trucks");
+		System.out.println("3. Display the highest rated food truck");
+		System.out.println("4. Exit the program");
+		System.out.println("Please enter your selection (1-4): ");
+		int selection = kb.nextInt();
 
 	}
-	
+
 	public void truckAverage() {
 		double total = 0;
 		double average = 0;
@@ -59,18 +61,31 @@ public class FoodTruckApplication {
 		for (indexSpot = 0; indexSpot < groupTruck.length; indexSpot++) {
 			if (groupTruck[indexSpot] == null) {
 				break;
+			} else {
+				double truckRating = groupTruck[indexSpot].getRating();
+				total = total + truckRating;
 			}
-			else {
-			double truckRating = groupTruck[indexSpot].getRating();
-			total = total + truckRating;
-			}
-			
-		}
-		average = total/indexSpot;
-		
-		System.out.println("The average for all the trucks is: " + average);
-	}
-	
-	
 
+		}
+		average = total / indexSpot;
+
+		System.out.println("The average rating for all the trucks is: " + average);
+	}
+
+	public void highestRated() {
+		int indexSpot = 0;
+		double currentHigh = 0;
+		for (indexSpot = 0; indexSpot < groupTruck.length; indexSpot++) {
+			if (groupTruck[indexSpot] == null) {
+				break;
+			} else {
+				double truckRating = groupTruck[indexSpot].getRating();
+				if (currentHigh < truckRating) {
+					currentHigh = truckRating;
+				}
+			}
+		}
+		System.out.println(currentHigh);
+
+	}
 }
