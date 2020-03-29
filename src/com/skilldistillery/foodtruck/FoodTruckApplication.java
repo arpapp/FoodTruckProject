@@ -32,15 +32,12 @@ public class FoodTruckApplication {
 
 		}
 
-//		System.out.println("" + groupTruck[0] + groupTruck[1] + groupTruck[2] + groupTruck[3] + groupTruck[4]) ;
 
 		System.out.println();
 		System.out
 				.println("Thank you for helping us create a better Food Truck Rater experience! We value your input.");
 		System.out.println();
-
 		
-		FT.highestRated();
 		
 		// will need a loopy loo for this menu
 		
@@ -52,6 +49,16 @@ public class FoodTruckApplication {
 		System.out.println("Please enter your selection (1-4): ");
 		int selection = kb.nextInt();
 
+	}
+	
+	public void listTrucks() {
+		for (int i = 0; i < groupTruck.length ; i++) {
+			if (groupTruck[i] == null) {
+				break;
+			} else {
+				System.out.println(groupTruck[i].toString());
+			}
+		}
 	}
 
 	public void truckAverage() {
@@ -82,7 +89,8 @@ public class FoodTruckApplication {
 				highest = groupTruck[i];
 			}
 		}
-		System.out.println("The highest rated truck is " + highest.getName());
+		System.out.println("The highest rated truck is " + highest.getName() + " with a rating of " + highest.getRating() +"." 
+				+ "Their cuisine is " + highest.getCuisine() + ".");
 
 	}
 }
