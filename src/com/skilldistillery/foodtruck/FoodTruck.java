@@ -4,12 +4,12 @@ public class FoodTruck {
 	
 	private String name;
 	private String cuisine;
-	private double rating;
+	private int rating;
 	private int truckID;
 	private static int MAX_TRUCKS = 5;
 	
 	
-	public FoodTruck (String name, String cuisine, double rating) {
+	public FoodTruck (String name, String cuisine, int rating) {
 		this.name = name;
 		this.cuisine = cuisine;
 		this.rating = rating;
@@ -40,11 +40,11 @@ public class FoodTruck {
 		this.cuisine = cuisine;
 	}
 
-	public double getRating() {
+	public int getRating() {
 		return rating;
 	}
 
-	public void setRating(double rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 

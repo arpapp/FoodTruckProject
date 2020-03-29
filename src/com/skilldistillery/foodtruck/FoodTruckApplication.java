@@ -24,7 +24,7 @@ public class FoodTruckApplication {
 			String cuisine = kb.nextLine();
 
 			System.out.print("Please enter your rating for the truck, (scale of 1 - 10); ");
-			double rating = kb.nextDouble();
+			int rating = kb.nextInt();
 			kb.nextLine();
 
 			FoodTruck truck = new FoodTruck(name, cuisine, rating); // object creation
@@ -73,19 +73,16 @@ public class FoodTruckApplication {
 	}
 
 	public void highestRated() {
-		int indexSpot = 0;
-		double currentHigh = 0;
-		for (indexSpot = 0; indexSpot < groupTruck.length; indexSpot++) {
-			if (groupTruck[indexSpot] == null) {
+		FoodTruck highest = groupTruck[0];
+		for (int i = 0; i < groupTruck.length; i++) {
+			if (groupTruck[i] == null) {
 				break;
-			} else {
-				double truckRating = groupTruck[indexSpot].getRating();
-				if (currentHigh < truckRating) {
-					currentHigh = truckRating;
-				}
+			} 
+			else if (highest.getRating() < groupTruck[i].getRating()) {
+				highest = groupTruck[i];
 			}
 		}
-		System.out.println(currentHigh);
+		System.out.println("The highest rated truck is " + highest.getName());
 
 	}
 }
