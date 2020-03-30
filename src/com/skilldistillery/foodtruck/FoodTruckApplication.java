@@ -41,6 +41,8 @@ public class FoodTruckApplication {
 		
 		// will need a loopy loo for this menu
 		
+		FT.highestRated();
+		
 		System.out.println("Please select from the following options: ");
 		System.out.println("1. List all existing food trucks");
 		System.out.println("2. See the average rating of food trucks");
@@ -79,7 +81,7 @@ public class FoodTruckApplication {
 		System.out.println("The average rating for all the trucks is: " + average);
 	}
 
-	public void highestRated() {
+	public void highestRated() {    //NEED TO ADD ID
 		FoodTruck highest = groupTruck[0];
 		for (int i = 0; i < groupTruck.length; i++) {
 			if (groupTruck[i] == null) {
@@ -90,7 +92,7 @@ public class FoodTruckApplication {
 			}
 		}
 		System.out.println("The highest rated truck is " + highest.getName() + " with a rating of " + highest.getRating() +"." 
-				+ "Their cuisine is " + highest.getCuisine() + ".");
+				+ "Their cuisine is " + highest.getCuisine() + ".\nIf you'd like to look them up, there ID is " + highest.getUniqueID());
 
 	}
 }

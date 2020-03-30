@@ -5,7 +5,8 @@ public class FoodTruck {
 	private String name;
 	private String cuisine;
 	private int rating;
-	private int truckID;
+	private static int assignID = 1000;
+	private int uniqueID;
 	private static int MAX_TRUCKS = 5;
 	
 	
@@ -13,16 +14,30 @@ public class FoodTruck {
 		this.name = name;
 		this.cuisine = cuisine;
 		this.rating = rating;
-		this.truckID = truckID;
+		FoodTruck.assignID = FoodTruck.assignID + 5;
+		this.uniqueID = assignID;
+		
 	}
-//no ID in constructor b/c it's not passed?
 	
-//	public int assignID() {
-//		int ID = 1;
-//		this.
-//		
-//	}
+	public static int assignID() {
+		return assignID;
+	}
 	
+	public static void nextID(int assignID) {
+		FoodTruck.assignID = assignID;
+	}
+	
+	public int uniqueID() {
+		return uniqueID;
+	}
+	
+	public void setUniqueID(int uniqueID) {
+		this.uniqueID = uniqueID;
+	}
+	
+	public int getUniqueID() {
+		return uniqueID;
+	}
 
 	public String getName() {
 		return name;
@@ -50,8 +65,11 @@ public class FoodTruck {
 
 	@Override
 	public String toString() {
-		return "FoodTruck [name=" + name + ", cuisine=" + cuisine + ", rating=" + rating + "]";
+		return "FoodTruck [name=" + name + ", cuisine=" + cuisine + ", rating=" + rating + ", uniqueID=" + uniqueID
+				+ "]";
 	}
+	
+	
 	
 	
 }
