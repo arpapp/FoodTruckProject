@@ -34,22 +34,38 @@ public class FoodTruckApplication {
 
 
 		System.out.println();
-		System.out
-				.println("Thank you for helping us create a better Food Truck Rater experience! We value your input.");
+		System.out.println("Thank you for helping us create a better Food Truck Rater experience! We value your input.");
 		System.out.println();
 		
+		int selection;
 		
-		// will need a loopy loo for this menu
-		
-		FT.highestRated();
-		
+		do {
 		System.out.println("Please select from the following options: ");
 		System.out.println("1. List all existing food trucks");
 		System.out.println("2. See the average rating of food trucks");
 		System.out.println("3. Display the highest rated food truck");
 		System.out.println("4. Exit the program");
 		System.out.println("Please enter your selection (1-4): ");
-		int selection = kb.nextInt();
+			selection = kb.nextInt();
+			
+			if (selection == 1) {
+				FT.listTrucks();
+			}
+			else if (selection == 2) {
+				FT.truckAverage();
+			}
+			else if (selection == 3) {
+				FT.highestRated();
+			}
+			else if (selection == 4) {
+				break;
+			}
+			else {
+				System.out.println("Invalid selection.");
+			}
+		}while (selection != 4);
+			System.out.println("Thank you for using Food Truck Rater!");
+			System.exit(0);
 
 	}
 	
@@ -81,7 +97,7 @@ public class FoodTruckApplication {
 		System.out.println("The average rating for all the trucks is: " + average);
 	}
 
-	public void highestRated() {    //NEED TO ADD ID
+	public void highestRated() {  
 		FoodTruck highest = groupTruck[0];
 		for (int i = 0; i < groupTruck.length; i++) {
 			if (groupTruck[i] == null) {
@@ -91,8 +107,8 @@ public class FoodTruckApplication {
 				highest = groupTruck[i];
 			}
 		}
-		System.out.println("The highest rated truck is " + highest.getName() + " with a rating of " + highest.getRating() +"." 
-				+ "Their cuisine is " + highest.getCuisine() + ".\nIf you'd like to look them up, there ID is " + highest.getUniqueID());
+		System.out.println("The highest rated truck is " + highest.getName() + " with a rating of " + highest.getRating() +". " 
+				+ "Their cuisine is " + highest.getCuisine() + ".\nIf you'd like to look them up, their ID is " + highest.getUniqueID() + ".");
 
 	}
 }
