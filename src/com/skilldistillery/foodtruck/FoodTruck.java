@@ -6,9 +6,7 @@ public class FoodTruck {
 	private String cuisine;
 	private int rating;
 	private static int assignID = 1000;
-	private int uniqueID;
-	private static int MAX_TRUCKS = 5;
-	
+	private int uniqueID;	
 	
 	public FoodTruck (String name, String cuisine, int rating) {
 		this.name = name;
