@@ -1,6 +1,6 @@
 ## Food Truck Project - Week 2 Skill Distillery
 
-#Overview
+# Overview
 
 The program starts by asking the user to enter information for up to five different food trucks. It is possible to enter less than five food trucks as long as the user types "quit" when prompted to do so.
 
@@ -20,13 +20,13 @@ Once the user is done, they can type "4" to quit the program.
 
 For the FoodTruck object class, all the variables are listed as private at the top in order to achieve encapsulation. All getter and setter methods are standard in that they get the instance quality and then set it as specific to that instance. However, the getter and setter for Unique ID had to function independent of user input and thus has several extra steps.
 
-#Technologies Used
+# Technologies Used
 
 - Eclipse
 - Java
 - GitHub
 
-#Lessons Learned
+# Lessons Learned
 
 This project helped me to understand a lot more about arrays, objects, and the interplay between the two. When I first began this project, I had some idea of how I wanted to have an array of objects. However, as I began constructing the truck average method, I realized I had no idea how to just look at one quality of an object that is stored in an array. Now, I think I am comfortable with the idea of iterating through the array and using get methods to achieve this.
 
